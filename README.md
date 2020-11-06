@@ -9,6 +9,12 @@ The un-normalise data will also be placed in individual excel sheets.
 
 The newly created excel file will be saved in in your Session Folder.
 
+![](images/SubjectInfo.png)
+
+![](images/NormalisedGraph.png)
+
+![](images/Data.png)
+
 ## Requirements
 ### Versions:
 Vicon Nexus 2.12 and above
