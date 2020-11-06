@@ -2,27 +2,12 @@
 # coding=utf-8
 from __future__ import print_function
 
-import ViconNexus
+from viconnexusapi import ViconNexus
 import xlsxwriter
 import numpy as np
 from numpy import zeros, linspace
 
-__filename__ = """ plugingait_to_excel.py """
-__version__ = """ 1 """
-__company__ = """ VICON MOTION SYSTEM Ltd """
-__date__ = """ 15/05/2020 """
-__author__ = """ jgay """
-__notes__ = """ This Python Code is an example code created to work in conjunction with Vicon Nexus 2 and processed
-Lower Body or Full Body Plug-in Gait Data. The code needs to be run from within Vicon Nexus 2.
-The data will be normalised and placed in individual excel sheets.
-The un-normalise data will also be placed in individual excel sheets.
-
-The newly created excel file will be saved in in your Session Folder. """
-
-##########################################################################
-
 vicon = ViconNexus.ViconNexus()
-
 
 def createworksheet(ws_name, cstart, cend, cwidth):
     ws_nr = workbook.add_worksheet(ws_name)
