@@ -2096,7 +2096,7 @@ RAnkPZ = data_PlugInGait_power("RAnklePower")
 
 workbook = xlsxwriter.Workbook(TrialName + ".xlsx", {'in_memory': False})  # creating excel files
 
-worksheet1 = createworksheet('Subject_Info', 0, 8, 25)
+worksheet1 = createworksheet('Subject_Info', 0, 13, 25)
 worksheet2 = createworksheet('Norm_Kinematics', 0, 73, 25)
 worksheet3 = createworksheet('Norm_Kinetics', 0, 44, 25)
 worksheet4 = createworksheet('Norm_Kinematics_Graphs', 0, 26, 10)
@@ -2136,24 +2136,24 @@ worksheet1.write('B5', '', bold)
 worksheet1.write('C3', '', bold)
 worksheet1.write('C4', TrialName1, normal)
 worksheet1.write('C5', '', bold)
-worksheet1.write('F6', 'Links to Data Sheets ', boldposition)
-worksheet1.write_url('F7', 'internal:Norm_Kinematics!A1', string='Normalized Kinematics')
-worksheet1.write_url('F8', 'internal:Norm_Kinetics!A1', string='Normalized Kinetics')
-worksheet1.write_url('F9', 'internal:Norm_Kinematics_Graphs!A1',
+worksheet1.write('F2', 'Links to Data Sheets ', boldposition)
+worksheet1.write_url('F3', 'internal:Norm_Kinematics!A1', string='Normalized Kinematics')
+worksheet1.write_url('F4', 'internal:Norm_Kinetics!A1', string='Normalized Kinetics')
+worksheet1.write_url('F5', 'internal:Norm_Kinematics_Graphs!A1',
                      string='Normalized Kinematics Graphs')
-worksheet1.write_url('F10', 'internal:Norm_Kinetics_Graphs!A1', string='Normalized Kinetics Graphs')
-worksheet1.write_url('F11', 'internal:Kinematics!A1', string='Kinematics')
-worksheet1.write_url('F12', 'internal:Kinetics!A1', string='Kinetics')
-worksheet1.write_url('F13', 'internal:Cycle_1_Kinem!A1', string='Gait Cycle 1 Kinematics')
-worksheet1.write_url('F14', 'internal:Cycle_2_Kinem!A1', string='Gait Cycle 2 Kinematics')
-worksheet1.write_url('F15', 'internal:Cycle_3_Kinem!A1', string='Gait Cycle 3 Kinematics')
-worksheet1.write_url('F16', 'internal:Cycle_4_Kinem!A1', string='Gait Cycle 4 Kinematics')
-worksheet1.write_url('F17', 'internal:Cycle_5_Kinem!A1', string='Gait Cycle 5 Kinematics')
-worksheet1.write_url('F18', 'internal:Cycle_1_Kinet!A1', string='Gait Cycle 1 Kinetics')
-worksheet1.write_url('F19', 'internal:Cycle_2_Kinet!A1', string='Gait Cycle 2 Kinetics')
-worksheet1.write_url('F20', 'internal:Cycle_3_Kinet!A1', string='Gait Cycle 3 Kinetics')
-worksheet1.write_url('F21', 'internal:Cycle_4_Kinet!A1', string='Gait Cycle 4 Kinetics')
-worksheet1.write_url('F22', 'internal:Cycle_5_Kinet!A1', string='Gait Cycle 5 Kinetics')
+worksheet1.write_url('F6', 'internal:Norm_Kinetics_Graphs!A1', string='Normalized Kinetics Graphs')
+worksheet1.write_url('F7', 'internal:Kinematics!A1', string='Kinematics')
+worksheet1.write_url('F8', 'internal:Kinetics!A1', string='Kinetics')
+worksheet1.write_url('F9', 'internal:Cycle_1_Kinem!A1', string='Gait Cycle 1 Kinematics')
+worksheet1.write_url('F10', 'internal:Cycle_2_Kinem!A1', string='Gait Cycle 2 Kinematics')
+worksheet1.write_url('F11', 'internal:Cycle_3_Kinem!A1', string='Gait Cycle 3 Kinematics')
+worksheet1.write_url('F12', 'internal:Cycle_4_Kinem!A1', string='Gait Cycle 4 Kinematics')
+worksheet1.write_url('F13', 'internal:Cycle_5_Kinem!A1', string='Gait Cycle 5 Kinematics')
+worksheet1.write_url('F14', 'internal:Cycle_1_Kinet!A1', string='Gait Cycle 1 Kinetics')
+worksheet1.write_url('F15', 'internal:Cycle_2_Kinet!A1', string='Gait Cycle 2 Kinetics')
+worksheet1.write_url('F16', 'internal:Cycle_3_Kinet!A1', string='Gait Cycle 3 Kinetics')
+worksheet1.write_url('F17', 'internal:Cycle_4_Kinet!A1', string='Gait Cycle 4 Kinetics')
+worksheet1.write_url('F18', 'internal:Cycle_5_Kinet!A1', string='Gait Cycle 5 Kinetics')
 
 worksheet1.write('B6', 'Subject Paramaters', boldposition)
 worksheet1.write('C6', '', bold)
@@ -2167,6 +2167,16 @@ worksheet1.write('D11', 'Right', boldright)
 worksheet1.write('B20', 'Analysis ', boldposition)
 worksheet1.write('C20', 'Left', boldleft)
 worksheet1.write('D20', 'Right', boldright)
+worksheet1.write('E20', 'Left_1', boldleft)
+worksheet1.write('F20', 'Right_1', boldright)
+worksheet1.write('G20', 'Left_2', boldleft)
+worksheet1.write('H20', 'Right_2', boldright)
+worksheet1.write('I20', 'Left_3', boldleft)
+worksheet1.write('J20', 'Right_3', boldright)
+worksheet1.write('K20', 'Left_4', boldleft)
+worksheet1.write('L20', 'Right_4', boldright)
+worksheet1.write('M20', 'Left_5', boldleft)
+worksheet1.write('N20', 'Right_5', boldright)
 
 worksheet1.write('B21', 'Gait Cycle Count:', bold)
 worksheet1.write('C21', left_gait_cycle, normal)
@@ -2190,24 +2200,131 @@ subjparam('Ankle Width (mm): ', 'LeftAnkleWidth',
           'RightAnkleWidth', worksheet1, 'B18', 'C18', 'D18')
 
 analysisout('Cadence (steps/min): ', 'LeftCadence', 'RightCadence', worksheet1, 'B22', 'C22', 'D22')
-analysisout('Walking Speed (m/s): ', 'LeftWalking Speed',
-            'RightWalking Speed', worksheet1, 'B23', 'C23', 'D23')
-analysisout('Stride Time (s): ', 'LeftStride Time',
-            'RightStride Time', worksheet1, 'B24', 'C24', 'D24')
-analysisout('Step Time (s): ', 'LeftStep Time', 'RightStep Time', worksheet1, 'B25', 'C25', 'D25')
-analysisout('Opposite Foot Off (%): ', 'LeftOpposite Foot Off', 'RightOpposite Foot Off', worksheet1, 'B26', 'C26',
+analysisout('Cadence (steps/min): ', 'LeftCadence_1', 'RightCadence_1', worksheet1, 'B22', 'E22', 'F22')
+analysisout('Cadence (steps/min): ', 'LeftCadence_2', 'RightCadence_2', worksheet1, 'B22', 'G22', 'H22')
+analysisout('Cadence (steps/min): ', 'LeftCadence_3', 'RightCadence_3', worksheet1, 'B22', 'I22', 'J22')
+analysisout('Cadence (steps/min): ', 'LeftCadence_4', 'RightCadence_4', worksheet1, 'B22', 'K22', 'L22')
+analysisout('Cadence (steps/min): ', 'LeftCadence_5', 'RightCadence_5', worksheet1, 'B22', 'M22', 'N22')
+
+analysisout('Walking Speed (m/s): ', 'LeftWalkingSpeed',
+            'RightWalkingSpeed', worksheet1, 'B23', 'C23', 'D23')
+analysisout('Walking Speed (m/s): ', 'LeftWalkingSpeed_1',
+            'RightWalkingSpeed_1', worksheet1, 'B23', 'E23', 'F23')
+analysisout('Walking Speed (m/s): ', 'LeftWalkingSpeed_2',
+            'RightWalkingSpeed_2', worksheet1, 'B23', 'G23', 'H23')
+analysisout('Walking Speed (m/s): ', 'LeftWalkingSpeed_3',
+            'RightWalkingSpeed_3', worksheet1, 'B23', 'I23', 'J23')
+analysisout('Walking Speed (m/s): ', 'LeftWalkingSpeed_4',
+            'RightWalkingSpeed_4', worksheet1, 'B23', 'K23', 'L23')
+analysisout('Walking Speed (m/s): ', 'LeftWalkingSpeed_5',
+            'RightWalkingSpeed_5', worksheet1, 'B23', 'M23', 'N23')
+
+analysisout('Stride Time (s): ', 'LeftStrideTime',
+            'RightStrideTime', worksheet1, 'B24', 'C24', 'D24')
+analysisout('Stride Time (s): ', 'LeftStrideTime_1',
+            'RightStrideTime_1', worksheet1, 'B24', 'E24', 'F24')
+analysisout('Stride Time (s): ', 'LeftStrideTime_2',
+            'RightStrideTime_2', worksheet1, 'B24', 'G24', 'H24')
+analysisout('Stride Time (s): ', 'LeftStrideTime_3',
+            'RightStrideTime_3', worksheet1, 'B24', 'I24', 'J24')
+analysisout('Stride Time (s): ', 'LeftStrideTime_4',
+            'RightStrideTime_4', worksheet1, 'B24', 'K24', 'L24')
+analysisout('Stride Time (s): ', 'LeftStrideTime_5',
+            'RightStrideTime_5', worksheet1, 'B24', 'M24', 'N24')
+
+analysisout('Step Time (s): ', 'LeftStepTime', 'RightStepTime', worksheet1, 'B25', 'C25', 'D25')
+analysisout('Step Time (s): ', 'LeftStepTime_1', 'RightStepTime_1', worksheet1, 'B25', 'E25', 'F25')
+analysisout('Step Time (s): ', 'LeftStepTime_2', 'RightStepTime_2', worksheet1, 'B25', 'G25', 'H25')
+analysisout('Step Time (s): ', 'LeftStepTime_3', 'RightStepTime_3', worksheet1, 'B25', 'I25', 'J25')
+analysisout('Step Time (s): ', 'LeftStepTime_4', 'RightStepTime_4', worksheet1, 'B25', 'K25', 'L25')
+analysisout('Step Time (s): ', 'LeftStepTime_5', 'RightStepTime_5', worksheet1, 'B25', 'M25', 'N25')
+
+analysisout('Opposite Foot Off (%): ', 'LeftOppositeFootOff', 'RightOppositeFootOff', worksheet1, 'B26', 'C26',
             'D26')
-analysisout('Opposite Foot Contact (%): ', 'LeftOpposite Foot Contact', 'RightOpposite Foot Contact', worksheet1, 'B27',
+analysisout('Opposite Foot Off (%): ', 'LeftOppositeFootOff_1', 'RightOppositeFootOff_1', worksheet1, 'B26', 'E26',
+            'F26')
+analysisout('Opposite Foot Off (%): ', 'LeftOppositeFootOff_2', 'RightOppositeFootOff_2', worksheet1, 'B26', 'G26',
+            'H26')
+analysisout('Opposite Foot Off (%): ', 'LeftOppositeFootOff_3', 'RightOppositeFootOff_3', worksheet1, 'B26', 'I26',
+            'J26')
+analysisout('Opposite Foot Off (%): ', 'LeftOppositeFootOff_4', 'RightOppositeFootOff_4', worksheet1, 'B26', 'K26',
+            'L26')
+analysisout('Opposite Foot Off (%): ', 'LeftOppositeFootOff_5', 'RightOppositeFootOff_5', worksheet1, 'B26', 'M26',
+            'N26')
+
+analysisout('Opposite Foot Contact (%): ', 'LeftOppositeFootContact', 'RightOppositeFootContact', worksheet1, 'B27',
             'C27', 'D27')
-analysisout('Foot Off (%): ', 'LeftFoot Off', 'RightFoot Off', worksheet1, 'B28', 'C28', 'D28')
-analysisout('Double Support (s): ', 'LeftDouble Support',
-            'RightDouble Support', worksheet1, 'B29', 'C29', 'D29')
-analysisout('Stride Length (m): ', 'LeftStride Length',
-            'RightStride Length', worksheet1, 'B30', 'C30', 'D30')
-analysisout('Step Length (m): ', 'LeftStep Length',
-            'RightStep Length', worksheet1, 'B31', 'C31', 'D31')
-analysisout('Step Width (m): ', 'LeftStep Width',
-            'RightStep Width', worksheet1, 'B32', 'C32', 'D32')
+analysisout('Opposite Foot Contact (%): ', 'LeftOppositeFootContact_1', 'RightOppositeFootContact_1', worksheet1, 'B27',
+            'E27', 'F27')
+analysisout('Opposite Foot Contact (%): ', 'LeftOppositeFootContact_2', 'RightOppositeFootContact_2', worksheet1, 'B27',
+            'G27', 'H27')
+analysisout('Opposite Foot Contact (%): ', 'LeftOppositeFootContact_3', 'RightOppositeFootContact_3', worksheet1, 'B27',
+            'I27', 'J27')
+analysisout('Opposite Foot Contact (%): ', 'LeftOppositeFootContact_4', 'RightOppositeFootContact_4', worksheet1, 'B27',
+            'K27', 'L27')
+analysisout('Opposite Foot Contact (%): ', 'LeftOppositeFootContact_5', 'RightOppositeFootContact_5', worksheet1, 'B27',
+            'M27', 'N27')
+
+
+analysisout('Foot Off (%): ', 'LeftFootOff', 'RightFootOff', worksheet1, 'B28', 'C28', 'D28')
+analysisout('Foot Off (%): ', 'LeftFootOff_1', 'RightFootOff_1', worksheet1, 'B28', 'E28', 'F28')
+analysisout('Foot Off (%): ', 'LeftFootOff_2', 'RightFootOff_2', worksheet1, 'B28', 'G28', 'H28')
+analysisout('Foot Off (%): ', 'LeftFootOff_3', 'RightFootOff_3', worksheet1, 'B28', 'I28', 'J28')
+analysisout('Foot Off (%): ', 'LeftFootOff_4', 'RightFootOff_4', worksheet1, 'B28', 'K28', 'L28')
+analysisout('Foot Off (%): ', 'LeftFootOff_5', 'RightFootOff_5', worksheet1, 'B28', 'M28', 'N28')
+
+analysisout('Double Support (s): ', 'LeftDoubleSupport',
+            'RightDoubleSupport', worksheet1, 'B29', 'C29', 'D29')
+analysisout('Double Support (s): ', 'LeftDoubleSupport_1',
+            'RightDoubleSupport_1', worksheet1, 'B29', 'E29', 'F29')
+analysisout('Double Support (s): ', 'LeftDoubleSupport_2',
+            'RightDoubleSupport_2', worksheet1, 'B29', 'G29', 'H29')
+analysisout('Double Support (s): ', 'LeftDoubleSupport_3',
+            'RightDoubleSupport_3', worksheet1, 'B29', 'I29', 'J29')
+analysisout('Double Support (s): ', 'LeftDoubleSupport_4',
+            'RightDoubleSupport_4', worksheet1, 'B29', 'K29', 'L29')
+analysisout('Double Support (s): ', 'LeftDoubleSupport_5',
+            'RightDoubleSupport_5', worksheet1, 'B29', 'M29', 'N29')
+
+analysisout('Stride Length (m): ', 'LeftStrideLength',
+            'RightStrideLength', worksheet1, 'B30', 'C30', 'D30')
+analysisout('Stride Length (m): ', 'LeftStrideLength_1',
+            'RightStrideLength_1', worksheet1, 'B30', 'E30', 'F30')
+analysisout('Stride Length (m): ', 'LeftStrideLength_2',
+            'RightStrideLength_2', worksheet1, 'B30', 'G30', 'H30')
+analysisout('Stride Length (m): ', 'LeftStrideLength_3',
+            'RightStrideLength_3', worksheet1, 'B30', 'I30', 'J30')
+analysisout('Stride Length (m): ', 'LeftStrideLength_4',
+            'RightStrideLength_4', worksheet1, 'B30', 'K30', 'L30')
+analysisout('Stride Length (m): ', 'LeftStrideLength_5',
+            'RightStrideLength_5', worksheet1, 'B30', 'M30', 'N30')
+
+analysisout('Step Length (m): ', 'LeftStepLength',
+            'RightStepLength', worksheet1, 'B31', 'C31', 'D31')
+analysisout('Step Length (m): ', 'LeftStepLength_1',
+            'RightStepLength_1', worksheet1, 'B31', 'E31', 'F31')
+analysisout('Step Length (m): ', 'LeftStepLength_2',
+            'RightStepLength_2', worksheet1, 'B31', 'G31', 'H31')
+analysisout('Step Length (m): ', 'LeftStepLength_3',
+            'RightStepLength_3', worksheet1, 'B31', 'I31', 'J31')
+analysisout('Step Length (m): ', 'LeftStepLength_4',
+            'RightStepLength_4', worksheet1, 'B31', 'K31', 'L31')
+analysisout('Step Length (m): ', 'LeftStepLength_5',
+            'RightStepLength_5', worksheet1, 'B31', 'M31', 'N31')
+
+analysisout('Step Width (m): ', 'LeftStepWidth',
+            'RightStepWidth', worksheet1, 'B32', 'C32', 'D32')
+analysisout('Step Width (m): ', 'LeftStepWidth_1',
+            'RightStepWidth_1', worksheet1, 'B32', 'E32', 'F32')
+analysisout('Step Width (m): ', 'LeftStepWidth_2',
+            'RightStepWidth_2', worksheet1, 'B32', 'G32', 'H32')
+analysisout('Step Width (m): ', 'LeftStepWidth_3',
+            'RightStepWidth_3', worksheet1, 'B32', 'I32', 'J32')
+analysisout('Step Width (m): ', 'LeftStepWidth_4',
+            'RightStepWidth_4', worksheet1, 'B32', 'K32', 'L32')
+analysisout('Step Width (m): ', 'LeftStepWidth_5',
+            'RightStepWidth_5', worksheet1, 'B32', 'M32', 'N32')
+
 analysisout('Limp Index: ', 'LeftLimp Index', 'RightLimp Index', worksheet1, 'B33', 'C33', 'D33')
 analysisout('GDI Index: ', 'LeftGDI', 'RightGDI', worksheet1, 'B34', 'C34', 'D34')
 
@@ -2400,3 +2517,4 @@ worksheet5.insert_chart('I50', Chart11Kinetics, {'x_offset': 25, 'y_offset': 10}
 worksheet5.insert_chart('Q50', Chart12Kinetics, {'x_offset': 25, 'y_offset': 10})
 
 workbook.close()
+
