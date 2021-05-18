@@ -17,9 +17,9 @@ The newly created excel file will be saved in in your Session Folder.
 
 ## Requirements
 ### Versions:
-Vicon Nexus 2.12 and above
-Python version 3
+- Vicon Nexus 2.12 and above
+- Python version 3
 
 ### Site Packages:
-Numpy 1.18.5 and above
-XlsxWriter 1.2.9
+- Numpy 1.18.5
+- XlsxWriter 1.2.9
